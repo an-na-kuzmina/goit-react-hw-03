@@ -1,6 +1,6 @@
 .wrapper {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
 }
@@ -9,4 +9,8 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+}
+
+.name {
+  font-weight: bold;
 }

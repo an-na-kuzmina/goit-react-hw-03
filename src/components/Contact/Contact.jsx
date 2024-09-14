@@ -4,7 +4,7 @@ const Contact = ({ name, number, onDelete, id }) => {
   return (
     <div className={s.wrapper}>
       <div className={s.card}>
-        <p>{name}</p>
+        <p className={s.name}>{name}</p>
         <p>{number}</p>
       </div>
 
