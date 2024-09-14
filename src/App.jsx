@@ -21,6 +21,18 @@ const App = () => {
   }),
     [contacts];
 
+  const addContact = newContact => {
+    setContacts(prevContacts => {
+      return [...prevContacts, newContact];
+    });
+  };
+
+  const deleteContact = contactId => {
+    setContacts(prevContacts => {
+      return prevContacts.filter(contact => contact.id !== contactId);
+    });
+  };
+
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
@@ -29,9 +41,9 @@ const App = () => {
     <>
       <div className="appWrap">
         <h1 className="appTitle">Phonebook</h1>
-        <ContactForm />
+        <ContactForm onAdd={addContact} />
         <SearchBox value={filter} onSearch={setFilter} />
-        <ContactList contacts={filteredContacts} />
+        <ContactList contacts={filteredContacts} onDelete={deleteContact} />
       </div>
     </>
   );
