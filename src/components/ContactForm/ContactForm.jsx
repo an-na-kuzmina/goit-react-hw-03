@@ -17,7 +17,7 @@ const ContactForm = ({ onAdd }) => {
     actions.resetForm();
   };
 
-  const nameReg = /^[a-zA-Z]+$/;
+  const nameReg = /^[a-zA-Z\s]+$/;
   const numberReg = /^[0-9.-]*$/;
 
   const contactFormSchema = Yup.object().shape({
